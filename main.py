@@ -68,8 +68,10 @@ def index():
 # 生成音频文件的路由
 @app.route('/generate_wav', methods=['POST'])
 def generate_wav():
+    logger.info("Received request to /generate_wav")
     try:
         data = request.json
+        logger.info(f"Request data: {data}")
         text = data.get("text")
         voice_name = data.get("voice_name")
         language = data.get("language")
@@ -83,6 +85,7 @@ def generate_wav():
 """
         output_file = "output.mp3"
         if save_audio(ssml, subscription_key, output_file):
+            logger.info("Audio file created successfully")
             return send_file(output_file, mimetype='audio/mp3')
         else:
             logger.error("Failed to generate audio in save_audio function")
