@@ -15,6 +15,9 @@
         "src": "/(.*)",
         "dest": "main.py"
       }
-    ]
+    ],
+    "features": {
+      "feedback": false
+    }
   }
   
