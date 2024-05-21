@@ -63,7 +63,7 @@ def save_audio(ssml, subscription_key, output_file):
 # 根路径路由
 @app.route('/')
 def index():
-    return 'Hello, world!'
+    return 'Hello, world2!'
 
 # 生成音频文件的路由
 @app.route('/generate_wav', methods=['POST'])
